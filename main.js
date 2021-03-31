@@ -8,9 +8,7 @@ const app = new Vue({
     mounted() {
         axios.get('https://flynn.boolean.careers/exercises/api/array/music')
             .then((response) => {
-                this.songs = response.data.response.sort(function(a,b) {
-                    return a.year - b.year;
-                });
+                this.songs = response.data.response.sort((a,b) => a.year - b.year);
                 this.songs.forEach(song => {
                     if(!this.genres.includes(song.genre)) {
                         this.genres.push(song.genre);
