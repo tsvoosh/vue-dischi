@@ -18,7 +18,7 @@
         <header>
             <img src="img/200px-Spotify_logo_with_text.svg.png" alt="spotify logo" id="logo">
         </header>
-        <select :value="selected" v-model="selected">
+        <select v-model="selected">
             <option v-for="genre in genres">{{genre}}</option>
         </select>
         <div id="container">
