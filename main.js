@@ -20,10 +20,7 @@ const app = new Vue({
     },
     methods: {
         show(song) {
-            if(this.selected == 'All') {
-                return true;
-            }
-            if (song.genre == this.selected) {
+            if (song.genre == this.selected || this.selected == 'All') {
                 return true;
             } else {
                 return false;
