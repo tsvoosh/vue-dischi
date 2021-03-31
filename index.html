@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Spotivuey</title>
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <img src="img/200px-Spotify_logo_with_text.svg.png" alt="spotify logo" id="logo">
+        </header>
+        <select :value="selected" v-model="selected">
+            <option v-for="genre in genres">{{genre}}</option>
+        </select>
+        <div id="container">
+            <div v-if="show(song)" class="song-wrapper" v-for="song in songs">
+                <img class="resize-img" :src="song.poster" alt="song">
+                <h3>{{song.title}}</h3>
+                <p>{{song.author}}</p>
+                <p>{{song.year}}</p>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
